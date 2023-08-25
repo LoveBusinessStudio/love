@@ -20401,9 +20401,6 @@ p.sub-para-style {
 }
 
 /**
- * Owl Carousel v2.3.4
- * Copyright 2013-2018 David Deutsch
- * Licensed under: SEE LICENSE IN https://github.com/OwlCarousel2/OwlCarousel2/blob/master/LICENSE
  */
 .owl-carousel,
 .owl-carousel .owl-item {
@@ -20908,29 +20905,77 @@ button.owl-next {
 }
 
 
+.image-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: red;
+  padding: 20px;
+  position: relative;
+}
+
 .my-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  /* margin-bottom: 10px;  */
+  justify-content: space-between; /* 将左右容器分散对齐 */
 }
 
-.my-container .left img{
-  width: 100px;
-  margin-left: 60px;
+.my-container .left {
+  display: flex;
+  align-items: center;
 }
-.my-container .right img{
-  width: 200px;
-  margin-left: 520px;
+
+.my-container .left img {
+  max-width: 80px;
+  margin-right: 20px;
+}
+
+.my-container .right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* 将右侧容器靠右对齐 */
+}
+
+.my-container .right img {
+  max-width: 150px;
+  margin-top: 10px;
+  margin-left: 600px; /* 设置图片与文字之间的间距 */
 }
 
 .my-container .text {
-  flex-grow: 1; /* 文字容器占据剩余空间 */
-  margin-left: 20px; /* 文字容器与左边图片之间的距离 */
+  margin-left: 20px;
 }
 
 .my-container .text p {
   margin: 0;
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .image-wrapper {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .my-container .left,
+  .my-container .right {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .my-container .left img,
+  .my-container .right img {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .my-container .text {
+    margin-left: 0;
+    margin-top: 10px;
+    text-align: center;
+  }
 }
 /* =============== shuimu作品赏析 =============== */
 
@@ -21074,6 +21119,7 @@ button.owl-next {
 /* 作品轴 */
 
 /* mengcixi */
+
 .image-grid {
   display: flex;
   justify-content: center;
